@@ -332,24 +332,6 @@ XTroid.addCMD({pattern: 'ngold ?(.*)', fromMe: FM, dontAddCMDList: true}, (async
 }));
 
 
-const lasiapi = require('textmaker-lasi');
-const XTroid = require('../events');
-const GG = "...."
-const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
-const fs = require('fs');
-const Config = require('../config')
-const axios = require('axios')
-const request = require('request');
-const need = "*type some word after command*\n*විධානයට පසුව වචනයක් ලියන්න"
-let FM = Config.WORKTYPE == 'public' ? false : true
-    
-
-
-
-
-
-
-
 
 
 XTroid.addCMD({pattern: 'eph ?(.*)', fromMe: FM, dontAddCMDList: true}, (async (message, match) => {
