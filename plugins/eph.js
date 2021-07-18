@@ -24,11 +24,6 @@ let wk = Config.WORKTYPE == 'public' ? false : true
 
 
 XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-        await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
-        const { lasi } = ann.data.def1
-        const lc = lasi
-        const seed = Config.LOCK
-        if (lc !== seed) return await message.sendMessage(GG);
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
     const lc = lasi
@@ -75,7 +70,7 @@ XTroid.addCMD({pattern: 'cmt ?(.*)', fromMe: true, dontAddCommandList: true}, (a
           } catch(err) { 
               console.log(err)
           } 
-    });
+    });});
 }));
 
 XTroid.addCMD({pattern: 'cfl ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
