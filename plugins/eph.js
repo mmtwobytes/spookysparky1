@@ -29,7 +29,7 @@ XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
     const lc = lasi
     const seed = Config.LOCK
     if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html",
+    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/make-smoky-neon-glow-effect-343.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -54,7 +54,7 @@ XTroid.addCMD({pattern: 'glow ?(.*)', fromMe: wk, dontAddCommandList: true}, (as
     const lc = lasi
     const seed = Config.LOCK
     if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/make-smoky-neon-glow-effect-343.html",
+    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
