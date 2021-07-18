@@ -23,13 +23,13 @@ let wk = Config.WORKTYPE == 'public' ? false : true
 
 
 
-XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+XTroid.addCMD({pattern: 'btf ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
     const lc = lasi
     const seed = Config.LOCK
     if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/make-smoky-neon-glow-effect-343.html",
+    LASIapi.photooxy("https://photooxy.com/fps-game-effect/create-battlefield-4-rising-effect-152.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -48,7 +48,7 @@ XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
     });});
 }));
 
-XTroid.addCMD({pattern: 'glow ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
     const lc = lasi
