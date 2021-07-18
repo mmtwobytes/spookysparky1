@@ -67,3 +67,28 @@ XTroid.addCMD({pattern: 'textcemetery ?(.*)', fromMe: true, dontAddCommandList: 
           } 
     });
 }));
+
+XTroid.addCMD({pattern: 'csm ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+    await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
+        const { lasi } = ann.data.def1
+    const lc = lasi
+    const seed = Config.LOCK
+    if (lc !== seed) return await message.sendMessage(Config.GG);
+    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
+        `${match[1]}`
+        ).then(async (data) => { 
+          try { 
+              var download = async(uri, filename, callback) => {
+                  await request.head(uri, async(err, res, body) => {    
+                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                  });
+              };
+
+              await download(`${data}`, '/root/lizy/cms.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cms.jpg'), MessageType.image, { caption: 'xxx' })
+              })
+          } catch(err) { 
+              console.log(err)
+          } 
+    });});
+}));
