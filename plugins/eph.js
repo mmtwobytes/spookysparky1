@@ -40,7 +40,7 @@ XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
               };
 
               await download(`${data}`, '/root/lizy/cup.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cup.jpg'), MessageType.image, { caption: 'xxx' })
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cup.jpg'), MessageType.image, { caption: Config.CAPTION_KEY})
               })
           } catch(err) { 
               console.log(err)
@@ -65,7 +65,7 @@ XTroid.addCMD({pattern: 'cmt ?(.*)', fromMe: true, dontAddCommandList: true}, (a
               };
 
               await download(`${data}`, '/root/lizy/cmth.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cmth.jpg'), MessageType.image, { caption: 'a' })
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cmth.jpg'), MessageType.image, { caption: Config.CAPTION_KEY})
               })
           } catch(err) { 
               console.log(err)
@@ -90,7 +90,7 @@ XTroid.addCMD({pattern: 'cfl ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
               };
 
               await download(`${data}`, '/root/lizy/cgs.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cgs.jpg'), MessageType.image, { caption: 'xxx' })
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cgs.jpg'), MessageType.image, { caption: Config.CAPTION_KEY })
               })
           } catch(err) { 
               console.log(err)
@@ -153,32 +153,6 @@ XTroid.addCMD({pattern: 'cgl ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (
     });});
 }));
 
-XTroid.addCMD({pattern: 'cgl ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (message, match) => {
-
-    await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
-        const { lasi } = ann.data.def1
-        const lc = lasi
-        const seed = Config.LOCK
-        if (lc !== seed) return await message.sendMessage(GG);
-    if (match[1] === '') return await message.sendMessage(need);
-    LASIapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html",
-        `${match[1]}`
-        ).then(async (data) => { 
-          try { 
-              var download = async(uri, filename, callback) => {
-                  await request.head(uri, async(err, res, body) => {    
-                      await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-                  });
-              };
-
-              await download(`${data}`, '/root/lizy/cgl.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cgl.jpg'), MessageType.image, { caption:  Config.CAPTION_KEY})
-              })
-          } catch(err) { 
-              console.log(err)
-          } 
-    });});
-}));
 
 
 XTroid.addCMD({pattern: 'cstn ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (message, match) => {
