@@ -74,7 +74,7 @@ XTroid.addCMD({pattern: 'csm ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
     const lc = lasi
     const seed = Config.LOCK
     if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
+    LASIapi.photooxy("https://photooxy.com/art-effects/flower-typography-text-effect-164.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -84,8 +84,8 @@ XTroid.addCMD({pattern: 'csm ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
                   });
               };
 
-              await download(`${data}`, '/root/lizy/cms.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cms.jpg'), MessageType.image, { caption: 'xxx' })
+              await download(`${data}`, '/root/lizy/cgs.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cgs.jpg'), MessageType.image, { caption: 'xxx' })
               })
           } catch(err) { 
               console.log(err)
