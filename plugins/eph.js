@@ -23,13 +23,13 @@ let wk = Config.WORKTYPE == 'public' ? false : true
 
 
 
-XTroid.addCMD({pattern: 'cms ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
     const lc = lasi
     const seed = Config.LOCK
     if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
+    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -48,13 +48,8 @@ XTroid.addCMD({pattern: 'cms ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
     });});
 }));
 
-XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
-    await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
-        const { lasi } = ann.data.def1
-    const lc = lasi
-    const seed = Config.LOCK
-    if (lc !== seed) return await message.sendMessage(Config.GG);
-    LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/put-text-on-the-cup-387.html",
+XTroid.addCMD({pattern: 'textcemetery ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    thiccysapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -64,11 +59,11 @@ XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
                   });
               };
 
-              await download(`${data}`, '/root/lizy/glowlasi.jpg', async() => {                          
-                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/glowlasi.jpg'), MessageType.image, { caption: 'xxx' })
+              await download(`${data}`, '/root/lizy/cmth.jpg', async() => {                          
+                  await message.client.sendMessage(message.jid,fs.readFileSync('/root/lizy/cmth.jpg'), MessageType.image, { caption: 'a' })
               })
           } catch(err) { 
               console.log(err)
           } 
-    });});
+    });
 }));
