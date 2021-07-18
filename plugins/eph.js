@@ -24,6 +24,11 @@ let wk = Config.WORKTYPE == 'public' ? false : true
 
 
 XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (async (message, match) => {
+        await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
+        const { lasi } = ann.data.def1
+        const lc = lasi
+        const seed = Config.LOCK
+        if (lc !== seed) return await message.sendMessage(GG);
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
     const lc = lasi
@@ -49,6 +54,11 @@ XTroid.addCMD({pattern: 'cup ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
 }));
 
 XTroid.addCMD({pattern: 'cmt ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+        await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
+        const { lasi } = ann.data.def1
+        const lc = lasi
+        const seed = Config.LOCK
+        if (lc !== seed) return await message.sendMessage(GG);
     LASIapi.photooxy("https://photooxy.com/logo-and-text-effects/text-on-scary-cemetery-gate-172.html",
         `${match[1]}`
         ).then(async (data) => { 
@@ -95,14 +105,13 @@ XTroid.addCMD({pattern: 'cfl ?(.*)', fromMe: wk, dontAddCommandList: true}, (asy
 
 
 XTroid.addCMD({pattern: 'cmg ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (message, match) => {
-
     await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
         const { lasi } = ann.data.def1
         const lc = lasi
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html",
+    LASIapi.textpro("https://textpro.me/create-a-magma-hot-text-effect-online-1030.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -130,7 +139,7 @@ XTroid.addCMD({pattern: 'cgl ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html",
+    LASIapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -157,7 +166,7 @@ XTroid.addCMD({pattern: 'cgl ?(.*)', fromMe: wk, dontAddCMDList: true}, (async (
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html",
+    LASIapi.textpro("https://textpro.me/create-impressive-glitch-text-effects-online-1027.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -185,7 +194,7 @@ XTroid.addCMD({pattern: 'cstn ?(.*)', fromMe: wk, dontAddCMDList: true}, (async 
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html",
+    LASIapi.textpro("https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -213,7 +222,7 @@ XTroid.addCMD({pattern: 'crod ?(.*)', fromMe: wk, dontAddCMDList: true}, (async 
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/road-warning-text-effect-878.html",
+    LASIapi.textpro("https://textpro.me/road-warning-text-effect-878.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
@@ -241,7 +250,7 @@ XTroid.addCMD({pattern: 'cgem ?(.*)', fromMe: wk, dontAddCMDList: true}, (async 
         const seed = Config.LOCK
         if (lc !== seed) return await message.sendMessage(GG);
     if (match[1] === '') return await message.sendMessage(need);
-    lasiapi.textpro("https://textpro.me/blue-gem-text-effect-830.html",
+    LASIapi.textpro("https://textpro.me/blue-gem-text-effect-830.html",
         `${match[1]}`
         ).then(async (data) => { 
           try { 
