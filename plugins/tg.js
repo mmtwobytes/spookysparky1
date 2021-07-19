@@ -78,7 +78,7 @@ XTroid.addCMD({pattern: 'tg ?(.*)', fromMe: true, desc: Lang.TAGALL_DESC }, (asy
 
             async (uye) => {
 
-                mesaj += '@' + uye.id.split('@')[0] + ' ';
+                mesaj += '@' + uye.id.split('@')[0] + '\n';
 
                 jids.push(uye.id.replace('c.us', 's.whatsapp.net'));
 
@@ -102,7 +102,7 @@ XTroid.addCMD({pattern: 'tg ?(.*)', fromMe: true, desc: Lang.TAGALL_DESC }, (asy
 
             async (uye) => {
 
-                mesaj += '@' + uye.id.split('@')[0] + ' ';
+                mesaj += '@' + uye.id.split('@')[0] + '\n';
 
                 jids.push(uye.id.replace('c.us', 's.whatsapp.net'));
 
