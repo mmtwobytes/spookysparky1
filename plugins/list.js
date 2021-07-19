@@ -2,23 +2,22 @@ const XTroid = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 
 
+XTroid.addCMD({pattern: 'list ?(.*)', fromMe: true}, (async (message, match) => {    
+        
+    const buttons = [
+        {buttonId: 'id1', buttonText: {displayText: 'Button 1'}, type: 1},
+        {buttonId: 'id2', buttonText: {displayText: 'Button 2'}, type: 1}
+      ]
+      
+      const buttonMessage = {
+          contentText: "Hi it's button message",
+          footerText: 'Hello World',
+          buttons: buttons,
+          headerType: 1
+      }
+      
+    await message.client.sendMessage(message.jid,buttonMessage,MessageType.buttonsMessage);
 
-const rows = [
-    {title: 'Group List', description: "HTTP://wa.me", rowId:"rowid1"},
-    {title: 'YouTube Channel', description: "youtube chann", rowId:"rowid2"}
-   ]
-   const sections = [{title: "The List", rows: rows}]
-   
-   const button = {
-    buttonText: 'About us',
-    description: "infomations about us",
-    sections: sections,
-    listType: 1
-   }
-   
-   XTroid.addCMD({pattern: 'list', fromMe: true}, (async (message, match) => {
+}));
 
 
-     await message.client.sendMessage(message.jid, button, MessageType.listMessage);
-
-   }));
