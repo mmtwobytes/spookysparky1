@@ -10,6 +10,13 @@ const Language = require('../language');
 const Lang = Language.getString('admin');
 const mut = Language.getString('mute');
 
+const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
+            + 'VERSION:3.0\n' 
+            + 'FN:LASI\n' // full name
+            + 'ORG:X Crew;\n' // the organization of the contact
+            + 'TEL;type=CELL;type=VOICE;waid=911234567890:+91 12345 67890\n' // WhatsApp ID + phone number
+            + 'END:VCARD'
+
 async function checkImAdmin(message, user = message.client.user.jid) {
     var grup = await message.client.groupMetadata(message.jid);
     var sonuc = grup['participants'].map((member) => {
@@ -48,6 +55,20 @@ XTroid.addCMD({pattern: 'fdem ?(.*)', fromMe: true, desc: DDO, deleteCommand: tr
         }
 
 }));
+
+
+XTroid.addCMD({pattern: 'vcc ?(.*)', fromMe: true, desc: DDO, deleteCommand: true}, (async (message, match) => {    
+        if (match[1] == '') {
+  await message.client.sendMessage(message.jid, {displayname: "X", vcard: vcard}, MessageType.contact)
+        }
+}));
+
+
+
+          
+
+
+
 module.exports = {
     checkImAdmin: checkImAdmin
 };
