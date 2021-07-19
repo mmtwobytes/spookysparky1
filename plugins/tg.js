@@ -36,7 +36,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 
 }
 
-XTroid.addCMD({pattern: 'tg ?(.*)', fromMe: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
+XTroid.addCMD({pattern: 'tg ?(.*)', fromMe: true, desc: Lang.TAGALL_DESC,deleteCommand: true }, (async (message, match) => {
 
     var im = await (message);
 
