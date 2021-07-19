@@ -14,9 +14,11 @@ const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 
 XTroid.addCMD({pattern: 'list ?(.*)', fromMe: true}, (async (message, match) => {    
        
-      
-    await message.client.sendMessage(message.jid,buttonMessage,MessageType.buttonsMessage);
-
+    const sendMsg = await message.sendMessage(jid, buttonMessage, MessageType.buttonsMessage);
+    
+    await message.sendMessage(sendMsg)
 }));
+
+
 
 
