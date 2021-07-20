@@ -1,7 +1,7 @@
 
 const XTroid = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
-const CPK = "\n▃▃▃▃▃▃▃▃▃▃▃▃\n║*❄️Cpack Lite❄️*\n║\n║\n╠═*.cup* ```your text```\n║\n╠═*.cmt* ```your text```\n║\n╠═*.cfl* ```your text```\n║\n╠═*.cmg* ```your text```\n║\n╠═*.cgl* ```your text```\n║\n╠═*.cstn* ```your text```\n║\n╠═*.crod* ```your text```\n║\n╠═*.cgem* ```your text```\n║\n▃▃▃▃▃▃▃▃▃▃▃▃\n"
+const CPK = "\n◢◤◇◥◣◥◤◢◤◇◥◣◥◤◢◤◇◥◣\n║*🍁Cpack Lite║🍁*\n║\n║\n╠═*.cup*\n║🍄```.cup your text```\n║\n╠═*.cmt*\n║🍄```.cmt your text```\n║\n╠═*.cfl*\n║🍄```.cfl your text```\n║\n╠═*.cmg*\n║🍄```.cmg your text```\n║\n╠═*.cgl*\n║🍄```.cgl your text```\n║\n╠═*.cstn*\n║🍄```.cstn your text```\n║\n╠═*.crod*\n║🍄```.crod your text```\n║\n╠═*.cgem*\n║🍄```.cgem your text```\n║\n╚⏤⏤⏤⏤╗❀╔⏤⏤⏤⏤╝\n"
 const Config = require('../config')
 const Ln = "Cpack Logo"
 let FM = Config.WORKTYPE == 'public' ? false : true
