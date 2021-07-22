@@ -591,13 +591,14 @@ await conn.sendMessage(msg.key.remoteJid, Buffer.from(lasiyasimg.data), MessageT
                         } else {
                             whats = new Message(conn, msg);
                         }
+                        /*
                         if (msg.key.fromMe && command.deleteCommand) { 
                             var wrs = conn.user.phone.wa_version.split('.')[2]
                             if (wrs < 11) {
                                 await whats.delete() 
                             }
                         } 
-
+*/
                         // ==================== End Message Catcher ====================
 
                         // ==================== Error Message ====================
