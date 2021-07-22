@@ -9,11 +9,11 @@ WhatsAsena - Yusuf Usta
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
 const XTroid = require('../events');
 const Config = require('../config');
-
+const GSU = "Group subject changed...🖌"
 const Language = require('../language');
 const Lang = Language.getString('admin');
 const mut = Language.getString('mute');
-
+const GSD = "Change your group name"
 async function checkImAdmin(message, user = message.client.user.jid) {
     var grup = await message.client.groupMetadata(message.jid);
     var sonuc = grup['participants'].map((member) => {
@@ -1588,6 +1588,15 @@ XTroid.addCMD({pattern: 'invite ?(.*)', fromMe: true, onlyGroup: true, desc: Lan
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
+
+XTroid.addCMD({pattern: 'gs ?(.*)', onlyGroup: true, fromMe: true,desc: GSD}, (async (message, match) => {
+    var im = await checkImAdmin(message);
+    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
+    if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_SUB);
+    await message.client.groupUpdateSubject(message.jid, match[1]);
+    await message.client.sendMessage(message.jid,GSU,MessageType.text);
+    }
+));
 module.exports = {
     checkImAdmin: checkImAdmin
 };
