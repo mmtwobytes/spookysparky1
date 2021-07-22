@@ -511,7 +511,7 @@ if (msg.messageStubType === 32 || msg.messageStubType === 28) {
     // Görüşürüz Mesajı
     var gb = await getMessage(msg.key.remoteJid, 'goodbye');
     if (gb !== false) {
-        var lasiyasimg = await axios.get(`${Config.GIF_BYE}`, { responseType: 'arraybuffer' })
+        var lasiyasimg = await axios.get(`${config.GIF_BYE}`, { responseType: 'arraybuffer' })
         await conn.sendMessage(msg.key.remoteJid, Buffer.from(lasiyasimg.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message +'\n\n                 ᴾᵒʷᵉʳᵈ ᵇʸ ˣ⁻ᵀʳᵒᶦᵈ'});
     }
     return;
@@ -519,7 +519,7 @@ if (msg.messageStubType === 32 || msg.messageStubType === 28) {
     // Hoşgeldin Mesajı
     var gb = await getMessage(msg.key.remoteJid);
     if (gb !== false) {
-var lasiyasimg = await axios.get(`${Config.GIF_WEL}`, { responseType: 'arraybuffer' })
+var lasiyasimg = await axios.get(`${config.GIF_WEL}`, { responseType: 'arraybuffer' })
 await conn.sendMessage(msg.key.remoteJid, Buffer.from(lasiyasimg.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message +'\n\n                 ᴾᵒʷᵉʳᵈ ᵇʸ ˣ⁻ᵀʳᵒᶦᵈ'});
     }
     return;
